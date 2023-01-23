@@ -17,17 +17,7 @@ public class Product {
         this.price = price;
     }
 
-    public Product(ProductDTO productDTO){
-        this.id = new ProductId(productDTO.getId());
-        this.name = new ProductName(productDTO.getName());
-        this.price = new ProductPrice(productDTO.getPrice());
-    }
 
-    public Product(ProductDBO productDBO){
-        this.id = new ProductId(productDBO.getId());
-        this.name = new ProductName(productDBO.getName());
-        this.price = new ProductPrice(productDBO.getPrice());
-    }
 
 
 

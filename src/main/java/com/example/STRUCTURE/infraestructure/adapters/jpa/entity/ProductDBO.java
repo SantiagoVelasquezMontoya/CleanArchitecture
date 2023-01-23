@@ -2,6 +2,9 @@ package com.example.STRUCTURE.infraestructure.adapters.jpa.entity;
 
 
 import com.example.STRUCTURE.domain.model.product.Product;
+import com.example.STRUCTURE.domain.model.product.ProductId;
+import com.example.STRUCTURE.domain.model.product.ProductName;
+import com.example.STRUCTURE.domain.model.product.ProductPrice;
 import com.example.STRUCTURE.domain.model.product.dto.ProductDTO;
 import jakarta.persistence.*;
 import lombok.*;
@@ -36,5 +39,13 @@ public class ProductDBO {
         this.name= product.getName().getValue();
         this.price= product.getPrice().getValue();
     }
+    public Product toProduct(ProductDBO productDBO){
+        return new Product(
+                new ProductId(productDBO.getId()),
+                new ProductName(productDBO.getName()),
+                new ProductPrice(productDBO.getPrice())
+        );
+    }
+
 
 }

@@ -17,7 +17,8 @@ public class ProductRepositoryAdapter implements ProductRepository {
 
     @Override
     public Product saveProduct(ProductDTO productDTO) {
-        return  new Product(productAdapterRepository.save(new ProductDBO(productDTO)));
+        ProductDBO productDBO = new ProductDBO();
+        return productDBO.toProduct((productAdapterRepository.save(new ProductDBO(productDTO))));
         //return new Product(productDTO);
     }
 

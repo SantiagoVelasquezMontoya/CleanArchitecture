@@ -1,6 +1,9 @@
 package com.example.STRUCTURE.domain.model.product.dto;
 
 import com.example.STRUCTURE.domain.model.product.Product;
+import com.example.STRUCTURE.domain.model.product.ProductId;
+import com.example.STRUCTURE.domain.model.product.ProductName;
+import com.example.STRUCTURE.domain.model.product.ProductPrice;
 import com.example.STRUCTURE.infraestructure.adapters.jpa.entity.ProductDBO;
 
 public class ProductDTO {
@@ -52,5 +55,15 @@ public class ProductDTO {
         this.name = productDBO.getName();
         this.price = productDBO.getPrice();
     }
+
+    public Product toProduct(ProductDTO productDTO){
+        return new Product(
+                new ProductId(productDTO.getId()),
+                new ProductName(productDTO.getName()),
+                new ProductPrice(productDTO.getPrice())
+        );
+    }
+
+
 
 }
