@@ -3,13 +3,13 @@ package com.example.STRUCTURE.domain.model.product;
 public class ProductPrice {
 
 
-    private final Integer price;
+    private final Integer value;
 
-    public Integer getPrice() {
-        return price;
+    public Integer getValue() {
+        return value;
     }
 
-    public ProductPrice(Integer price) {
-        this.price = price;
+    public ProductPrice(Integer value) {
+        this.value = value;
     }
 }

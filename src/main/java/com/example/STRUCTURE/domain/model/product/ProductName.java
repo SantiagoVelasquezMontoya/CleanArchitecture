@@ -2,14 +2,14 @@ package com.example.STRUCTURE.domain.model.product;
 
 public class ProductName {
 
-    private final String name;
+    private final String value;
 
-    public ProductName(String name) {
-        this.name = name;
+    public ProductName(String value) {
+        this.value = value;
     }
 
-    public String getName() {
-        return name;
+    public String getValue() {
+        return value;
     }
 
 

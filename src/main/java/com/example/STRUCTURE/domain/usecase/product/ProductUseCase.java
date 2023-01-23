@@ -2,6 +2,7 @@ package com.example.STRUCTURE.domain.usecase.product;
 
 import com.example.STRUCTURE.domain.model.gateaways.ProductRepository;
 import com.example.STRUCTURE.domain.model.product.dto.ProductDTO;
+import com.example.STRUCTURE.infraestructure.adapters.jpa.entity.ProductDBO;
 
 public class ProductUseCase {
     private final ProductRepository productRepository;
@@ -11,7 +12,8 @@ public class ProductUseCase {
     }
 
 
-    public ProductDTO saveProduct(ProductDTO productDTO){
-        return productRepository.saveProduct(productDTO);
+    public ProductDBO saveProduct(ProductDTO productDTO){
+        ProductDBO productDBO = new ProductDBO(productRepository.saveProduct(productDTO));
+        return productDBO;
     }
 }

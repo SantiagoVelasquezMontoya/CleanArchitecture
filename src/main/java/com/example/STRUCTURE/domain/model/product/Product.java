@@ -1,5 +1,8 @@
 package com.example.STRUCTURE.domain.model.product;
 
+import com.example.STRUCTURE.domain.model.product.dto.ProductDTO;
+import com.example.STRUCTURE.infraestructure.adapters.jpa.entity.ProductDBO;
+
 public class Product {
 
     private final ProductId id;
@@ -13,6 +16,22 @@ public class Product {
         this.name = name;
         this.price = price;
     }
+
+    public Product(ProductDTO productDTO){
+        this.id = new ProductId(productDTO.getId());
+        this.name = new ProductName(productDTO.getName());
+        this.price = new ProductPrice(productDTO.getPrice());
+    }
+
+    public Product(ProductDBO productDBO){
+        this.id = new ProductId(productDBO.getId());
+        this.name = new ProductName(productDBO.getName());
+        this.price = new ProductPrice(productDBO.getPrice());
+    }
+
+
+
+
 
     public ProductId getId() {
         return id;
